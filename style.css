@@ -6,8 +6,7 @@
 }
 
 :root {
-  --themeColor: 29, 161, 242;
-  /* Theme Color in (R,G,B) format */
+  --themeColor: 219, 0, 0;
 }
 
 html {
@@ -15,33 +14,24 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 75em === 1200px */
 @media (max-width: 75em) {
   html {
     font-size: 60%;
   }
 }
 
-/* 56.25em === 900px */
 @media (max-width: 56.25em) {
   html {
     font-size: 58%;
   }
 }
 
-/* 37.5em === 600px */
 @media (max-width: 37.5em) {
   html {
     font-size: 56%;
   }
 }
 
-/* 112.5em === 1600px */
-/* @media (min-width: 112.5em) {
-  html {
-    font-size: 65%;
-  }
-} */
 
 body {
   font-family: 'PT Sans', sans-serif;
@@ -56,7 +46,6 @@ a {
   color: inherit;
 }
 
-/* Utils */
 
 .btn {
   font-family: inherit;
@@ -193,7 +182,6 @@ a {
   margin-bottom: 0;
 }
 
-/* Animation ( Keyframes ) */
 
 @keyframes downToUp {
   0% {
@@ -207,7 +195,6 @@ a {
   }
 }
 
-/* Main Header Stylings */
 
 .main-header {
   display: flex;
@@ -318,28 +305,6 @@ a {
   color: #555;
 }
 
-/* @keyframes smMenuLinkStartAnimation {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes smMenuLinkEndAnimation {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-} */
-
 .main-header__sm-scr-nav-btn-line:first-child {
   margin-bottom: 8px;
 }
@@ -392,20 +357,20 @@ a {
   }
 }
 
-/* Hero Section Stylings */
 
 .home-hero {
   display: flex;
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
+  padding: 0;
 }
 
 .home-hero__content {
   max-width: 120rem;
   margin: auto;
   width: 90%;
-
+  padding-top: 8rem;
   animation: downToUp 0.8s;
 }
 
@@ -445,7 +410,6 @@ a {
   }
 }
 
-/* About */
 .about {
   background: rgb(252, 252, 252);
 }
@@ -487,23 +451,32 @@ a {
 .about__skills {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .about__skill {
+  display: flex;
+  align-items: center;
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1.5rem 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-
   background: #eee;
   color: #666;
   border-radius: 5px;
   font-weight: 500;
+  gap: 1rem;
 }
 
-/* Skills Showcase */
+.about__skill i {
+  font-size: 3rem;
+  color: rgba(var(--themeColor), 1);
+}
+
+.about__skill span {
+  margin-left: 1rem;
+}
+
 
 .skills-showcase {
   background: rgba(247, 247, 247, 1);
@@ -575,31 +548,42 @@ a {
 
 /* projects */
 
-.projects__list-item {
+.projects__list {
   display: grid;
-  grid-template-columns: 45%;
-  grid-gap: 4rem;
-  margin-bottom: 8rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem; /* Adjust the gap between the grid items as needed */
 }
 
-.projects__list-item--inv {
-  justify-content: flex-end;
+@media (max-width: 75em) {
+  .projects__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 56.25em) {
+  .projects__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects__list-item {
+  margin-bottom: 4rem; /* Adjust the margin as needed */
 }
 
 @media (max-width: 75em) {
   .projects__list-item {
-    grid-template-columns: 60%;
+    margin-bottom: 4rem;
   }
 }
 
 @media (max-width: 56.25em) {
   .projects__list-item {
-    grid-template-columns: 100%;
+    margin-bottom: 4rem;
   }
 }
 
-.projects__list-item:last-child {
-  margin-bottom: 0;
+.projects__list-item--inv {
+  justify-content: flex-end;
 }
 
 .projects__list-item-count {
