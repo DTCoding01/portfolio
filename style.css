@@ -356,10 +356,11 @@ a {
 
 .home-hero {
   display: flex;
-  height: 100vh;
+  height: 60vh;
   min-height: 80rem;
   max-height: 120rem;
   padding: 0;
+  margin-bottom: -100px;
 }
 
 .home-hero__content {
@@ -368,6 +369,25 @@ a {
   width: 90%;
   padding-top: 8rem;
   animation: downToUp 0.8s;
+  display: flex;
+  gap: 20px;
+}
+
+.profile {
+  width: 40vw;
+}
+
+.profile img {
+  width: 100%;
+  min-height: 240px;
+  min-width: 177px;
+}
+
+@media (max-width: 600px) {
+  .home-hero__content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 37.5em) {
